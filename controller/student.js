@@ -54,6 +54,22 @@ router.get('/delete',async(req,res)=>{
   
 });
 
+router.get('/update',async(req,res)=>{
+
+    const found = await student.findById(req.query.id,(err, data)=>{
+        if(!err)
+        {
+            res.render('updateStu',{name:data.name, town:data.town})
+            res.send(data.name);
+            // res.redirect('/');
+        }
+        else
+        {
+            res.send("helloo i does not found");
+        }
+    });
+});
+
 
 
 module.exports = router;
