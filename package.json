@@ -1,0 +1,29 @@
+{
+  "name": "emp-mgt-systm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "dev": "nodemon index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shehan82/EMP-MGT-SYSTM.git"
+  },
+  "author": "shehan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shehan82/EMP-MGT-SYSTM/issues"
+  },
+  "homepage": "https://github.com/Shehan82/EMP-MGT-SYSTM#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.0",
+    "mongodb": "^3.6.3",
+    "mongoose": "^5.11.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
