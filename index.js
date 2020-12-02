@@ -21,7 +21,7 @@ app.get('/',(req,res)=>{
 })
 
 //routes
-app.use('/', require('./controller/employee'));
+app.use('/students', require('./controller/employee'));
 
 
 
