@@ -8,6 +8,10 @@ const url = 'mongodb://localhost:27017/empDB';
 mongoose.connect(url,  {useNewUrlParser:true});
 mongoose.connection.on('open', ()=>{console.log("Database connected!")});
 
+//body parser
+app.use(express.json());
+app.use(express.urlencoded({extended:true}));
+
 
 // handleBar config
 app.engine('hbs',hbs({extname:'hbs', defaultLayout:'layout', layoutsDir: __dirname + '/views/layouts/'}));
@@ -21,7 +25,7 @@ app.get('/',(req,res)=>{
 })
 
 //routes
-app.use('/students', require('./controller/employee'));
+app.use('/students', require('./controller/student'));
 
 
 

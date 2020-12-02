@@ -6,7 +6,7 @@ const studentSchema = mongoose.Schema(
             type: String,
             required: true
         },
-        age:{
+        town:{
             type: String,
             required: true
         }
