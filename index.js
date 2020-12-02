@@ -5,7 +5,7 @@ const app = express();
 const url = 'mongodb://localhost:27017/empDB';
 
 //DB connection
-mongoose.connect(url,  {useNewUrlParser:true});
+mongoose.connect(url,  {useNewUrlParser:true, useFindAndModify: false});
 mongoose.connection.on('open', ()=>{console.log("Database connected!")});
 
 //body parser
