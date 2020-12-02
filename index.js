@@ -21,7 +21,7 @@ app.set('view engine', 'hbs');
 
 //Middlewares
 app.get('/',(req,res)=>{
-    res.send("This is the home page!");
+    res.render('test',{title:'bal', arr:[7,4,5,6]});
 })
 
 //routes

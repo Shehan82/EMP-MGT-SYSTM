@@ -3,11 +3,10 @@ const student = require('../models/studentModel');
 const router = express.Router();
 
 router.get('/create',(req,res)=>{
-    res.render('createStu',{title:"Create student"});
+    res.render('createStu',{title:"Create student", status:"hidden"});
 });
 
 router.post('/create',(req,res)=>{
-    res.send(req.body);
     const s1 = new student(
         {
             name:req.body.name,
@@ -16,6 +15,11 @@ router.post('/create',(req,res)=>{
     )
 
     const a = s1.save();
+
+    if(a)
+    {
+        res.render('createStu',{title:"Create student", status:""});
+    }
 
 
 });
