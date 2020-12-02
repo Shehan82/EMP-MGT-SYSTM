@@ -30,7 +30,7 @@ router.post('/create',(req,res)=>{
 
 router.get('/view',async(req,res)=>{
     const students = await student.find().lean().exec();
-    res.render('viewStu',{to:students});
+    res.render('viewStu',{data:students});
     
     // res.json(students);
 });
