@@ -37,11 +37,15 @@ router.get('/',async(req,res)=>{
 });
 
 router.get('/delete',async(req,res)=>{
+
+    // res.send(req.query.id);
     
-    const found = await student.findById("5fc786d01cfdea35ac40761d",(err,data)=>{
+    const found = await student.findByIdAndDelete(req.query.id,(err, data)=>{
         if(!err)
         {
-            res.send(req.query.id);
+            res.redirect('/');
+            // res.send("deleted" + data);
+            // res.send(data);
         }
         else
         {
@@ -49,14 +53,7 @@ router.get('/delete',async(req,res)=>{
 
         }
     });
-    // if(found)
-    // {
-        
-    // }
-    // else
-    // {
-    //     res.send("helloo i found");
-    // }
+  
 });
 
 
