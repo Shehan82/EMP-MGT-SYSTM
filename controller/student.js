@@ -19,7 +19,7 @@ router.post('/create',(req,res)=>{
 
     if(a)
     {
-        res.render('viewStu',{title:"Create student"});
+        res.redirect('/');
     }
     else
     {
