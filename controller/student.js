@@ -7,6 +7,7 @@ router.get('/create',(req,res)=>{
 });
 
 router.post('/create',(req,res)=>{
+
     const s1 = new student(
         {
             name:req.body.name,
@@ -18,7 +19,7 @@ router.post('/create',(req,res)=>{
 
     if(a)
     {
-        res.render('createStu',{title:"Create student", status:""});
+        res.render('viewStu',{title:"Create student"});
     }
     else
     {
@@ -28,11 +29,36 @@ router.post('/create',(req,res)=>{
 
 });
 
-router.get('/view',async(req,res)=>{
+router.get('/',async(req,res)=>{
     const students = await student.find().lean().exec();
     res.render('viewStu',{data:students});
     
     // res.json(students);
 });
+
+router.get('/delete',async(req,res)=>{
+    
+    const found = await student.findById("5fc786d01cfdea35ac40761d",(err,data)=>{
+        if(!err)
+        {
+            res.send(req.query.id);
+        }
+        else
+        {
+            res.send("helloo i does not found");
+
+        }
+    });
+    // if(found)
+    // {
+        
+    // }
+    // else
+    // {
+    //     res.send("helloo i found");
+    // }
+});
+
+
 
 module.exports = router;

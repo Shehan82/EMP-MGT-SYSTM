@@ -19,13 +19,8 @@ app.set('views', )
 app.set('view engine', 'hbs');
 
 
-//Middlewares
-app.get('/',(req,res)=>{
-    res.render('test',{title:'bal', arr:[7,4,5,6]});
-})
-
 //routes
-app.use('/students', require('./controller/student'));
+app.use('/', require('./controller/student'));
 
 
 
