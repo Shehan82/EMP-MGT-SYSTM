@@ -59,9 +59,23 @@ router.get('/update',async(req,res)=>{
     const found = await student.findById(req.query.id,(err, data)=>{
         if(!err)
         {
-            res.render('updateStu',{name:data.name, town:data.town})
-            res.send(data.name);
-            // res.redirect('/');
+            res.render('updateStu',{id:data._id ,name:data.name, town:data.town});
+        }
+        else
+        {
+            res.send("helloo i does not found");
+        }
+    });
+});
+
+router.post('/update',async(req,res)=>{
+    
+    
+
+    const found = await student.findByIdAndUpdate(req.body.id,{name:req.body.name , town:req.body.town},(err, data)=>{
+        if(!err)
+        {
+            res.redirect('/');
         }
         else
         {
