@@ -1,4 +1,5 @@
 const express = require('express');
+const nodemon = require('nodemon');
 const student = require('../models/studentModel');
 const router = express.Router();
 
@@ -44,13 +45,10 @@ router.get('/delete',async(req,res)=>{
         if(!err)
         {
             res.redirect('/');
-            // res.send("deleted" + data);
-            // res.send(data);
         }
         else
         {
             res.send("helloo i does not found");
-
         }
     });
   
