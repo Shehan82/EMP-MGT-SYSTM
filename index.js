@@ -15,10 +15,13 @@ app.set('views', )
 app.set('view engine', 'hbs');
 
 
-
+//Middlewares
 app.get('/',(req,res)=>{
-    res.render('test',{title:"test page!", arr:[1,2,3,4]});
+    res.send("This is the home page!");
 })
+
+//routes
+app.use('/', require('./controller/employee'));
 
 
 
