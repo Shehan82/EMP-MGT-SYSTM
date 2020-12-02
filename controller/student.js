@@ -20,8 +20,19 @@ router.post('/create',(req,res)=>{
     {
         res.render('createStu',{title:"Create student", status:""});
     }
+    else
+    {
+        
+    }
 
 
+});
+
+router.get('/view',async(req,res)=>{
+    const students = await student.find().lean().exec();
+    res.render('viewStu',{to:students});
+    
+    // res.json(students);
 });
 
 module.exports = router;
